@@ -60,12 +60,11 @@ Route::middleware(['web', 'auth', 'verified'])->group(function () {
     Route::get('/usermanual', [UserManualController::class, 'index'])->name('usermanual.index');
 });
 
-Route::middleware(['web', 'auth' , 'verified'])->group(function () {
-    Route::get('login', [AuthController::class, 'index'])
-        ->name('login');
+Route::get('login', [AuthController::class, 'index'])
+    ->name('login')
+    ->middleware('guest');
 
-    Route::post('login', [AuthController::class, 'login'])
-        ->middleware('throttle:2,1');
-});
-
+Route::post('login', [AuthController::class, 'login'])
+    ->name('login')
+    ->middleware(['guest', 'throttle:2,1']);
 
