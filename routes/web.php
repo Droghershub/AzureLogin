@@ -60,7 +60,7 @@ Route::middleware(['web', 'auth', 'verified'])->group(function () {
     Route::get('/usermanual', [UserManualController::class, 'index'])->name('usermanual.index');
 });
 
-Route::group(['middleware' => 'guest'], function () {
+Route::middleware(['web', 'auth', 'verified'])->group(function () {
     Route::get('login', [AuthController::class, 'index'])->name('login');
     Route::post('login', [AuthController::class, 'login'])->name('login')->middleware('throttle:2,1');
 });
