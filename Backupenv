@@ -9,11 +9,11 @@ LOG_DEPRECATIONS_CHANNEL=null
 LOG_LEVEL=debug
 
 DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
+DB_HOST=droghers-hub-database-v1-uat.mysql.database.azure.com
 DB_PORT=3306
-DB_DATABASE=droghershub
-DB_USERNAME=root
-DB_PASSWORD=
+DB_DATABASE=droghers_hub
+DB_USERNAME=ubuntu
+DB_PASSWORD="qwerty@1234"
 
 BROADCAST_DRIVER=log
 CACHE_DRIVER=file
